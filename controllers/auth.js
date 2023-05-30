@@ -98,19 +98,8 @@ const updateSubscription = async (req, res) => {
   res.json(result);
 };
 
-// const updateAvatar = async (req, res) => {
-//   const { _id } = req.user;
-//   const { path: tempUpload, originalname } = req.file;
-//   const filename = `${_id}_${originalname}`;
-//   const resultUpload = path.join(avatarDir, filename);
-//   await fs.rename(tempUpload, resultUpload);
-//   const avatarURL = path.join("avatars", filename);
-//   await User.findByIdAndUpdate(_id, { avatarURL });
-// };
-
 const updateAvatar = async (req, res) => {
   const { _id: userId } = req.user;
-  // const avatarDir = path.join(__dirname, "..", "public", "avatars");
   const { path: tempUpload, originalname } = req.file;
   const avatarName = `${userId}_${originalname}`;
   const resultUpload = path.join(avatarDir, avatarName);
