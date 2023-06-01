@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install
+RUN yarn
 
-EXPOSE 3000
+ENTRYPOINT 3000
 
-CMD [ "node", "server" ]
+CMD [ "yarn", "start" ]
