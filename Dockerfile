@@ -6,6 +6,6 @@ COPY . .
 
 RUN yarn
 
-ENTRYPOINT 3000
+EXPOSE 3000
 
 CMD [ "yarn", "start" ]
